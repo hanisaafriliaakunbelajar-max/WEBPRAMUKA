@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Adat Racana Politeknik Negeri Sriwijaya</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+overflow-x:hidden;
+color:white;
+cursor:crosshair;
+}
+
+/* ================= BACKGROUND ================= */
+
+.hero{
+
+min-height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("poto/racana.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+position:relative;
+
+overflow:hidden;
+
+animation:bgZoom 20s infinite alternate;
+
+}
+
+@keyframes bgZoom{
+
+0%{
+background-size:100%;
+}
+
+100%{
+background-size:110%;
+}
+
+}
+
+/* ================= BATIK ================= */
+
+.batik-left,
+.batik-right{
+
+position:absolute;
+
+top:0;
+
+width:170px;
+
+height:100%;
+
+opacity:.25;
+
+background-image:
+
+radial-gradient(circle,#ffffff 2px,transparent 3px),
+radial-gradient(circle,#d9d9d9 2px,transparent 3px),
+radial-gradient(circle,#bfbfbf 2px,transparent 3px);
+
+background-size:60px 60px;
+
+animation:batikMove 12s linear infinite;
+
+filter:drop-shadow(0 0 8px silver);
+
+}
+
+.batik-left{
+
+left:0;
+
+}
+
+.batik-right{
+
+right:0;
+
+transform:scaleX(-1);
+
+}
+
+@keyframes batikMove{
+
+100%{
+
+background-position:0 200px;
+
+}
+
+}
+
+/* ================= WATERMARK ================= */
+
+.hero-watermark{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+width:70vw;
+
+opacity:.12;
+
+pointer-events:none;
+
+animation:rotateLogo 90s linear infinite;
+
+filter:drop-shadow(0 0 40px gold);
+
+}
+
+@keyframes rotateLogo{
+
+from{
+
+transform:translate(-50%,-50%) rotate(0deg);
+
+}
+
+to{
+
+transform:translate(-50%,-50%) rotate(360deg);
+
+}
+
+}
+
+/* ================= PARTICLES ================= */
+
+.particles{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background-image:
+radial-gradient(#FFD700 1px,transparent 1px);
+
+background-size:40px 40px;
+
+opacity:.15;
+
+animation:particleMove 15s linear infinite;
+
+}
+
+@keyframes particleMove{
+
+100%{
+
+background-position:0 180px;
+
+}
+
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+padding:20px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+z-index:999;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-size:28px;
+
+font-weight:800;
+
+color:#FFD700;
+
+}
+
+.logo img{
+
+width:60px;
+height:60px;
+
+border-radius:50%;
+
+background:white;
+
+padding:4px;
+
+border:3px solid gold;
+
+box-shadow:
+
+0 0 20px gold,
+0 0 50px rgba(255,215,0,.7),
+0 20px 40px rgba(0,0,0,.6);
+
+animation:logoFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes logoFloat{
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+gap:30px;
+
+}
+
+nav ul li a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+
+position:relative;
+
+}
+
+nav ul li a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-5px;
+
+width:0;
+
+height:2px;
+
+background:#FFD700;
+
+transition:.4s;
+
+}
+
+nav ul li a:hover::after{
+
+width:100%;
+
+}
+
+/* ================= CONTENT ================= */
+
+.container{
+
+position:relative;
+
+z-index:5;
+
+width:85%;
+
+margin:auto;
+
+padding-top:150px;
+
+padding-bottom:80px;
+
+}
+
+.title{
+
+text-align:center;
+
+margin-bottom:50px;
+
+}
+
+.title img{
+
+width:150px;
+
+height:150px;
+
+border-radius:50%;
+
+background:white;
+
+padding:8px;
+
+border:3px solid gold;
+
+box-shadow:
+
+0 0 25px gold,
+
+0 0 60px rgba(255,215,0,.7),
+
+0 20px 50px rgba(0,0,0,.6);
+
+animation:logoFloat 4s infinite ease-in-out;
+
+}
+
+.title h3{
+
+margin-top:20px;
+
+color:#FFD700;
+
+letter-spacing:5px;
+
+font-size:22px;
+
+}
+
+.title h1{
+
+font-size:65px;
+
+margin-top:10px;
+
+text-shadow:
+
+0 0 15px gold,
+
+0 0 40px gold;
+
+}
+
+.content{
+
+max-width:1000px;
+
+margin:auto;
+
+}
+
+.content h2{
+
+text-align:center;
+
+font-size:38px;
+
+color:#FFD700;
+
+margin-bottom:30px;
+
+text-shadow:0 0 15px gold;
+
+}
+
+.content p{
+
+font-size:20px;
+
+line-height:2;
+
+margin-bottom:20px;
+
+text-align:justify;
+
+text-shadow:1px 1px 5px black;
+
+}
+
+/* ================= MOTTO ================= */
+
+.motto{
+
+margin-top:50px;
+
+text-align:center;
+
+}
+
+.motto h2{
+
+color:#FFD700;
+
+margin-bottom:25px;
+
+}
+
+.motto p{
+
+font-size:30px;
+
+font-weight:bold;
+
+color:#FFD700;
+
+text-shadow:0 0 20px gold;
+
+letter-spacing:3px;
+
+text-align:center;
+
+}
+
+/* ================= BUTTON ================= */
+
+.button{
+
+text-align:center;
+
+margin-top:60px;
+
+}
+
+.button a{
+
+padding:15px 40px;
+
+background:#FFD700;
+
+color:black;
+
+text-decoration:none;
+
+font-weight:bold;
+
+border-radius:50px;
+
+box-shadow:0 0 20px gold;
+
+transition:.4s;
+
+}
+
+.button a:hover{
+
+transform:translateY(-5px);
+
+background:white;
+
+box-shadow:0 0 35px gold;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+nav{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.title h1{
+
+font-size:42px;
+
+}
+
+.title img{
+
+width:100px;
+
+height:100px;
+
+}
+
+.content p{
+
+font-size:17px;
+
+}
+
+.content h2{
+
+font-size:30px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+
+<img src="poto/pramuka.jpeg">
+
+<span>RACANA POLSRI</span>
+
+</div>
+
+<ul>
+
+<li><a href="index.html">Beranda</a></li>
+<li><a href="sejarah pramuka.html">Sejarah</a></li>
+<li><a href="adat.html">Adat</a></li>
+<li><a href="galeri.html">Galeri</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="batik-left"></div>
+
+<div class="batik-right"></div>
+
+<img src="poto/graha.jpeg" class="hero-watermark">
+
+<div class="particles"></div>
+
+<div class="container">
+
+<div class="title">
+
+<img src="poto/pramuka.jpeg">
+
+<h3>GERAKAN PRAMUKA</h3>
+
+<h1>ADAT RACANA</h1>
+
+</div>
+
+<div class="content">
+
+<h2>ADAT RACANA POLITEKNIK NEGERI SRIWIJAYA</h2>
+<p>Adat Racana Adalah Seperangkat Aturan, Norma Dan Budaya Dalam Menjalankan Kegiatan Kepramukaan Dilingkungan Racana Politeknik Negeri Sriwijaya Guna Menjadi Wajah Dan Moral EtiKa Pramuka Politeknik Negeri Sriwijaya
+</p>
+
+
+<div class="content">
+
+<h3>SENJATA ADAT</h3>
+
+<p>Senjata Adat Kujang</p>
+
+
+<div class="content">
+
+    <h3>SUGUHAN ADAT</h3>
+    
+    <P>Bolu Kojo Dan Teh Secang</P>
+
+<h2 style="margin-top:60px;">ATURAN ADAT RACANA</h2>
+
+<p>1. Dilarang Menggunakan Senjata Adat Tanpa Perizinan Dari Pemangku Adat.</p>
+
+<p>2. Dilarang Berbicara Kasar Pada Saat Sedang Menggunakan Seragam Pramuka Atau Sedang Berada Di Sekretariatan Pramuka.</p>
+
+<p>3. Dilarang Merokok Didalam Sekretariatan dan Lingkungannya.</p>
+
+<p>4. Dilarang Merokok Saat Sedang Menggunakan Atribut Racana./p>
+
+<p>5. Dilarang Mencemarkan Nama Baik Racana.</p>
+
+<p>6. Dilarang Mengotori Kesekretariatan.</p>
+
+<p>7. Bagi Anggota Yang Sudah Mendapatkan Budge Racana, Apabila Tidak Menggunakannya Maka Akan Dihapus Sebagai Anggota 
+      Tetap Dan Dikembalikan Ke Tamu Racana.
+</p>
+
+<p>8. Diwajibkan Untuk Bertegur Sapa Jika Bertemu Atau Berpapasan/5S (Senyum, Salam, Sopan, Sapa, dan Santun) Untuk 
+      Anggota Pramuka.
+</p>
+
+<p>9. Menaati Semua Aturan Yang Telah Dibuat Oleh Dewan Racana.</p>
+
+<p>10. Pemberian Sanksi Untuk Pelanggaran Diputuskan Melalui Sidang Dewan Racana.</p>
+
+
+<p>Segala Hal Yang Melanggar Norma, Mencoreng Etika Dan Merusak Moral Berarti Melanggar Pula Peraturan Adat Racana</p>
+
+<div class="motto">
+
+<h2>MOTTO RACANA</h2>
+
+<p>
+"Berkarya dengan Keteladanan, Mengabdi dengan Keikhlasan, Berjuang demi Kehormatan."<br>
+
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+
+</html>
