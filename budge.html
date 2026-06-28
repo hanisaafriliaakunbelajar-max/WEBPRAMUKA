@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Badge Racana POLSRI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:#0f172a;
+overflow-x:hidden;
+color:white;
+
+}
+
+/* HERO */
+
+.hero{
+
+min-height:100vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.55)
+),
+
+url("poto/racana.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* BATIK */
+
+.batik-left,
+.batik-right{
+
+position:absolute;
+
+top:0;
+
+width:180px;
+
+height:100%;
+
+opacity:.18;
+
+pointer-events:none;
+
+background-image:
+
+radial-gradient(circle,#ffffff 2px,transparent 3px),
+
+radial-gradient(circle,#d9d9d9 2px,transparent 3px),
+
+radial-gradient(circle,#bfbfbf 2px,transparent 3px);
+
+background-size:60px 60px;
+
+animation:batikMove 12s linear infinite;
+
+filter:drop-shadow(0 0 8px silver);
+
+z-index:1;
+
+}
+
+.batik-left{
+
+left:0;
+
+}
+
+.batik-right{
+
+right:0;
+
+transform:scaleX(-1);
+
+}
+
+@keyframes batikMove{
+
+0%{
+
+background-position:0 0;
+
+}
+
+100%{
+
+background-position:0 180px;
+
+}
+
+}
+
+/* WATERMARK */
+
+.hero-watermark{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+width:min(70vw,850px);
+
+opacity:.10;
+
+pointer-events:none;
+
+filter:drop-shadow(0 0 40px gold);
+
+animation:spin 90s linear infinite;
+
+}
+
+@keyframes spin{
+
+from{
+
+transform:
+translate(-50%,-50%)
+rotate(0deg);
+
+}
+
+to{
+
+transform:
+translate(-50%,-50%)
+rotate(360deg);
+
+}
+
+}
+
+/* NAVBAR */
+
+nav{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+padding:20px 5%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:
+
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+z-index:999;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-size:
+
+clamp(18px,2vw,28px);
+
+font-weight:800;
+
+color:#FFD700;
+
+}
+
+.logo img{
+
+width:60px;
+height:60px;
+
+border-radius:50%;
+
+padding:4px;
+
+background:white;
+
+border:3px solid gold;
+
+box-shadow:
+
+0 0 20px gold,
+
+0 0 50px rgba(255,215,0,.7),
+
+0 15px 35px rgba(0,0,0,.6);
+
+}
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+gap:30px;
+
+}
+
+nav ul li a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+color:#FFD700;
+
+}
+
+/* CONTAINER */
+
+.container{
+
+position:relative;
+
+z-index:5;
+
+width:min(92%,1200px);
+
+margin:auto;
+
+padding-top:150px;
+
+padding-bottom:80px;
+
+}
+
+/* TITLE */
+
+.title{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.title h1{
+
+font-size:
+
+clamp(30px,5vw,60px);
+
+text-shadow:
+
+0 0 15px gold,
+
+0 0 40px gold;
+
+}
+
+/* BADGE */
+
+.budge-container{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:60px;
+
+flex-wrap:wrap;
+
+}
+
+.budge-image{
+
+flex:1;
+
+min-width:300px;
+
+text-align:center;
+
+}
+
+.budge-image img{
+
+width:min(100%,320px);
+
+background:white;
+
+padding:15px;
+
+border-radius:20px;
+
+border:4px solid gold;
+
+box-shadow:
+
+0 0 20px gold,
+
+0 0 50px rgba(255,215,0,.7),
+
+0 15px 40px rgba(0,0,0,.6);
+
+transition:.4s;
+
+}
+
+.budge-image img:hover{
+
+transform:scale(1.03);
+
+}
+
+.budge-text{
+
+flex:2;
+
+min-width:320px;
+
+}
+
+.budge-text p{
+
+font-size:
+
+clamp(15px,2vw,19px);
+
+line-height:2;
+
+text-align:justify;
+
+margin-bottom:20px;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero{
+
+background-attachment:scroll;
+
+}
+
+nav{
+
+flex-direction:column;
+
+gap:15px;
+
+padding:15px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:12px;
+
+}
+
+nav ul li a{
+
+font-size:13px;
+
+}
+
+.logo{
+
+font-size:18px;
+
+}
+
+.logo img{
+
+width:45px;
+height:45px;
+
+}
+
+.container{
+
+padding-top:190px;
+
+}
+
+.budge-container{
+
+flex-direction:column;
+
+gap:35px;
+
+}
+
+.budge-text{
+
+width:100%;
+
+}
+
+.budge-text p{
+
+text-align:left;
+
+}
+
+.hero-watermark{
+
+width:90vw;
+
+}
+
+.batik-left,
+.batik-right{
+
+width:70px;
+
+opacity:.10;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+
+<img src="poto/pramuka.jpeg">
+
+<span>RACANA POLSRI</span>
+
+</div>
+
+<ul>
+
+<li><a href="index.html">BERANDA</a></li>
+
+<li><a href="sejarah pramuka.html">SEJARAH RACANA</a></li>
+
+<li><a href="adat.html">ADAT RACANA</a></li>
+
+<li><a href="budge.html">BADGE RACANA</a></li>
+
+<li><a href="Untitled-1.html">STRUKTUR RACANA</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="batik-left"></div>
+
+<div class="batik-right"></div>
+
+<img src="poto/graha.jpeg" class="hero-watermark">
+
+<div class="container">
+
+<div class="title">
+
+<h1>BADGE RACANA POLITEKNIK NEGERI SRIWIJAYA</h1>
+
+</div>
+
+<div class="budge-container">
+
+<div class="budge-image">
+
+<img src="poto/pramuka.jpeg">
+
+</div>
+
+<div class="budge-text">
+
+<p>
+<b>1. Bunga</b><br>
+Melambangkan tempat bernaungnya komunitas Pramuka di Politeknik Negeri Sriwijaya.
+</p>
+
+<p>
+<b>2. Jembatan Ampera</b><br>
+Melambangkan simbol kemakmuran serta identitas daerah bagi Pramuka POLSRI.
+</p>
+
+<p>
+<b>3. Dua Tunas Kelapa</b><br>
+Melambangkan bahwa Pramuka POLSRI memiliki dua satuan yaitu Putra dan Putri.
+</p>
+
+<p>
+<b>4. Ikatan Simpul</b><br>
+Melambangkan ikatan kekeluargaan yang kuat antar anggota.
+</p>
+
+<p>
+<b>5. WOSM</b><br>
+Melambangkan bahwa Pramuka berada di bawah organisasi kepanduan dunia.
+</p>
+
+<p>
+<b>6. Pisau Belatih</b><br>
+Melambangkan pusaka adat serta kesiapan menghadapi tantangan kehidupan.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>

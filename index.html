@@ -29,11 +29,11 @@ color:white;
 
 }
 
-/* BACKGROUND */
+/* HERO */
 
 .hero{
 
-min-height:100vh;
+min-height:100dvh;
 
 background:
 linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
@@ -45,7 +45,6 @@ background-repeat:no-repeat;
 background-attachment:fixed;
 
 position:relative;
-
 overflow:hidden;
 
 animation:bgZoom 18s ease-in-out infinite alternate;
@@ -56,7 +55,7 @@ animation:bgZoom 18s ease-in-out infinite alternate;
 
 0%{
 
-background-size:100%;
+background-size:cover;
 
 }
 
@@ -88,9 +87,7 @@ pointer-events:none;
 background-image:
 
 radial-gradient(circle,#ffffff 2px,transparent 3px),
-
 radial-gradient(circle,#d6d6d6 2px,transparent 3px),
-
 radial-gradient(circle,#c0c0c0 2px,transparent 3px);
 
 background-size:60px 60px;
@@ -150,9 +147,7 @@ opacity:.12;
 
 pointer-events:none;
 
-filter:
-
-drop-shadow(0 0 50px gold);
+filter:drop-shadow(0 0 50px gold);
 
 animation:putar 100s linear infinite;
 
@@ -181,7 +176,6 @@ nav{
 position:fixed;
 
 top:0;
-
 left:0;
 
 width:100%;
@@ -221,7 +215,6 @@ color:#FFD700;
 .logo img{
 
 width:60px;
-
 height:60px;
 
 border-radius:50%;
@@ -235,9 +228,7 @@ border:3px solid gold;
 box-shadow:
 
 0 0 20px gold,
-
 0 0 50px rgba(255,215,0,.8),
-
 0 15px 40px rgba(0,0,0,.6);
 
 }
@@ -291,7 +282,6 @@ text-align:center;
 .title img{
 
 width:150px;
-
 height:150px;
 
 border-radius:50%;
@@ -305,9 +295,7 @@ border:3px solid gold;
 box-shadow:
 
 0 0 20px gold,
-
 0 0 60px rgba(255,215,0,.8),
-
 0 20px 50px rgba(0,0,0,.7);
 
 animation:logoFloat 4s ease-in-out infinite;
@@ -343,7 +331,6 @@ margin-top:15px;
 text-shadow:
 
 0 0 20px gold,
-
 0 0 40px gold;
 
 }
@@ -373,8 +360,6 @@ margin-bottom:20px;
 }
 
 .card p{
-
-color:white;
 
 font-size:18px;
 
@@ -429,7 +414,6 @@ transform:translateY(-5px);
 position:fixed;
 
 width:24px;
-
 height:24px;
 
 border:2px solid gold;
@@ -443,12 +427,173 @@ transform:translate(-50%,-50%);
 box-shadow:
 
 0 0 15px gold,
-
 0 0 30px gold,
-
 0 0 50px rgba(255,215,0,.8);
 
 z-index:99999;
+
+}
+
+/* ===================== */
+/* TABLET */
+/* ===================== */
+
+@media(max-width:1024px){
+
+.title h1{
+
+font-size:42px;
+
+}
+
+.hero-watermark{
+
+width:80vw;
+
+}
+
+}
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+
+@media(max-width:768px){
+
+*{
+
+cursor:auto;
+
+}
+
+.cursor{
+
+display:none;
+
+}
+
+nav{
+
+padding:15px 5%;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.logo{
+
+font-size:20px;
+
+}
+
+.logo img{
+
+width:45px;
+height:45px;
+
+}
+
+nav ul{
+
+gap:12px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+nav ul li a{
+
+font-size:13px;
+
+}
+
+.hero{
+
+background-attachment:scroll;
+
+}
+
+.batik-left,
+.batik-right{
+
+width:80px;
+
+opacity:.08;
+
+}
+
+.hero-watermark{
+
+width:90vw;
+
+}
+
+.container{
+
+width:92%;
+
+padding-top:180px;
+
+}
+
+.title img{
+
+width:110px;
+height:110px;
+
+}
+
+.title h3{
+
+font-size:14px;
+
+letter-spacing:3px;
+
+}
+
+.title h1{
+
+font-size:28px;
+
+line-height:1.4;
+
+}
+
+.card{
+
+padding:25px;
+
+border-radius:20px;
+
+}
+
+.card h2{
+
+font-size:24px;
+
+}
+
+.card p{
+
+font-size:15px;
+
+line-height:1.8;
+
+text-align:left;
+
+}
+
+.button a{
+
+padding:12px 25px;
+
+font-size:14px;
+
+}
 
 }
 
@@ -472,10 +617,11 @@ z-index:99999;
 
 <ul>
 
-<li><a href="index.html">Beranda</a></li>
-<li><a href="sejarah pramuka.html">Sejarah</a></li>
-<li><a href="adat.html">Adat</a></li>
-<li><a href="galeri.html">Galeri</a></li>
+<li><a href="index.html">BERANDA</a></li>
+<li><a href="sejarah pramuka.html">SEJARAH RACANA</a></li>
+<li><a href="adat.html">ADAT RACANA</a></li>
+<li><a href="budge.html">BADGE RACANA</a></li>
+<li><a href="Untitled-1.html">STRUKTUR RACANA</a></li>
 
 </ul>
 
@@ -500,30 +646,17 @@ z-index:99999;
 <h1>RACANA POLITEKNIK NEGERI SRIWIJAYA</h1>
 
 </div>
-
-<div class="card">
-
-<p>
-Adat Racana bukan sekadar aturan, melainkan jiwa yang menghidupi setiap langkah anggota Gerakan Pramuka Racana Politeknik Negeri Sriwijaya. Berakar pada nilai-nilai Tri Satya dan Dasa Dharma, Adat Racana menumbuhkan semangat persaudaraan, keteladanan, disiplin, dan pengabdian, sebagai bekal untuk membentuk insan yang berkarakter kuat, berakhlak mulia, serta siap berkarya dan mengabdi bagi bangsa dan negara.
-</p>
-
-
-</div>
-
-</div>
-
 </div>
 
 </section>
 
 <script>
 
-const cursor=document.querySelector(".cursor");
+const cursor = document.querySelector(".cursor");
 
-document.addEventListener("mousemove",function(e){
+document.addEventListener("mousemove",(e)=>{
 
 cursor.style.left=e.clientX+"px";
-
 cursor.style.top=e.clientY+"px";
 
 });
@@ -531,5 +664,4 @@ cursor.style.top=e.clientY+"px";
 </script>
 
 </body>
-
 </html>

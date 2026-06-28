@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Tampilan desktop tetap pada HP -->
+<meta name="viewport" content="width=1400">
 
 <title>Sejarah Racana Politeknik Negeri Sriwijaya</title>
 
@@ -21,23 +24,30 @@ scroll-behavior:smooth;
 
 body{
 background:#0f172a;
-overflow-x:hidden;
+overflow-x:auto;
+min-width:1400px;
 }
 
-/* Background */
+/* ================= BACKGROUND ================= */
 
 .hero{
+
 min-height:100vh;
+
 background:
 linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
 url("poto/racana.jpg");
+
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
 background-attachment:fixed;
+
 position:relative;
 overflow:hidden;
+
 animation:bgZoom 18s infinite alternate;
+
 }
 
 @keyframes bgZoom{
@@ -52,19 +62,21 @@ background-size:110%;
 
 }
 
-/* Batik */
+/* ================= BATIK ================= */
 
 .batik-left,
 .batik-right{
 
 position:absolute;
 top:0;
+
 width:180px;
 height:100%;
+
 opacity:.18;
-pointer-events:none;
 
 background-image:
+
 radial-gradient(circle,#ffffff 2px,transparent 3px),
 radial-gradient(circle,#d9d9d9 2px,transparent 3px),
 radial-gradient(circle,#bfbfbf 2px,transparent 3px);
@@ -78,33 +90,46 @@ filter:drop-shadow(0 0 8px silver);
 }
 
 .batik-left{
+
 left:0;
+
 }
 
 .batik-right{
+
 right:0;
+
 transform:scaleX(-1);
+
 }
 
 @keyframes batikMove{
 
 100%{
+
 background-position:0 180px;
-}
 
 }
 
-/* Watermark */
+}
+
+/* ================= WATERMARK ================= */
 
 .hero-watermark{
 
 position:absolute;
+
 top:50%;
 left:50%;
+
 transform:translate(-50%,-50%);
-width:70vw;
+
+width:900px;
+
 opacity:.12;
+
 animation:putar 90s linear infinite;
+
 filter:drop-shadow(0 0 40px gold);
 
 }
@@ -112,29 +137,42 @@ filter:drop-shadow(0 0 40px gold);
 @keyframes putar{
 
 from{
+
 transform:translate(-50%,-50%) rotate(0deg);
+
 }
 
 to{
+
 transform:translate(-50%,-50%) rotate(360deg);
-}
 
 }
 
-/* Navbar */
+}
+
+/* ================= NAVBAR ================= */
 
 nav{
 
 position:fixed;
+
 top:0;
 left:0;
+
 width:100%;
+
 padding:20px 8%;
+
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
+
 background:rgba(255,255,255,.08);
+
 backdrop-filter:blur(20px);
+
 z-index:999;
 
 }
@@ -142,10 +180,15 @@ z-index:999;
 .logo{
 
 display:flex;
+
 align-items:center;
+
 gap:12px;
+
 font-size:28px;
+
 font-weight:800;
+
 color:#FFD700;
 
 }
@@ -154,12 +197,17 @@ color:#FFD700;
 
 width:60px;
 height:60px;
+
 border-radius:50%;
+
 background:white;
+
 padding:4px;
+
 border:3px solid gold;
 
 box-shadow:
+
 0 0 20px gold,
 0 0 50px rgba(255,215,0,.7),
 0 15px 35px rgba(0,0,0,.6);
@@ -169,7 +217,9 @@ box-shadow:
 nav ul{
 
 display:flex;
+
 list-style:none;
+
 gap:30px;
 
 }
@@ -177,8 +227,11 @@ gap:30px;
 nav ul li a{
 
 color:white;
+
 text-decoration:none;
+
 font-weight:600;
+
 transition:.3s;
 
 }
@@ -189,24 +242,30 @@ color:#FFD700;
 
 }
 
-/* Container */
+/* ================= CONTAINER ================= */
 
 .container{
 
-position:relative;
-z-index:10;
-width:85%;
+width:1100px;
+
 margin:auto;
+
 padding-top:150px;
+
 padding-bottom:80px;
+
+position:relative;
+
+z-index:10;
 
 }
 
-/* Judul */
+/* ================= TITLE ================= */
 
 .title{
 
 text-align:center;
+
 margin-bottom:40px;
 
 }
@@ -215,32 +274,43 @@ margin-bottom:40px;
 
 width:150px;
 height:150px;
+
 border-radius:50%;
+
 background:white;
+
 padding:8px;
+
 border:3px solid gold;
 
 box-shadow:
+
 0 0 25px gold,
 0 0 60px rgba(255,215,0,.8),
 0 20px 50px rgba(0,0,0,.7);
 
-animation:floatLogo 4s ease-in-out infinite;
+animation:floatLogo 4s ease infinite;
 
 }
 
 @keyframes floatLogo{
 
 0%{
+
 transform:translateY(0);
+
 }
 
 50%{
+
 transform:translateY(-15px);
+
 }
 
 100%{
+
 transform:translateY(0);
+
 }
 
 }
@@ -248,30 +318,38 @@ transform:translateY(0);
 .title h3{
 
 color:#FFD700;
+
 letter-spacing:5px;
+
 margin-top:20px;
+
+font-size:22px;
 
 }
 
 .title h1{
 
 font-size:65px;
-color:white;
 
-text-shadow:
-0 0 20px gold,
-0 0 40px gold;
+color:white;
 
 margin-top:10px;
 
+text-shadow:
+
+0 0 20px gold,
+0 0 40px gold;
+
 }
 
-/* Isi */
+/* ================= CONTENT ================= */
 
 .content{
 
 max-width:1000px;
+
 margin:auto;
+
 padding:20px;
 
 }
@@ -279,9 +357,13 @@ padding:20px;
 .content h2{
 
 text-align:center;
+
 color:#FFD700;
+
 font-size:36px;
+
 margin-bottom:30px;
+
 text-shadow:0 0 10px gold;
 
 }
@@ -289,19 +371,27 @@ text-shadow:0 0 10px gold;
 .content p{
 
 color:white;
+
 font-size:20px;
+
 line-height:2;
+
 margin-bottom:22px;
+
 text-align:justify;
-text-shadow:1px 1px 5px rgba(0,0,0,.8);
+
+text-shadow:
+
+1px 1px 5px rgba(0,0,0,.8);
 
 }
 
-/* Button */
+/* ================= BUTTON ================= */
 
 .button{
 
 text-align:center;
+
 margin-top:40px;
 
 }
@@ -309,10 +399,15 @@ margin-top:40px;
 .button a{
 
 padding:15px 40px;
+
 background:#FFD700;
+
 color:black;
+
 text-decoration:none;
+
 font-weight:bold;
+
 border-radius:50px;
 
 box-shadow:0 0 20px gold;
@@ -329,40 +424,6 @@ transform:translateY(-5px);
 
 }
 
-/* Responsive */
-
-@media(max-width:768px){
-
-nav{
-flex-direction:column;
-gap:15px;
-}
-
-nav ul{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.title h1{
-font-size:42px;
-}
-
-.title img{
-width:100px;
-height:100px;
-}
-
-.content p{
-font-size:17px;
-}
-
-.batik-left,
-.batik-right{
-display:none;
-}
-
-}
-
 </style>
 
 </head>
@@ -373,7 +434,7 @@ display:none;
 
 <div class="logo">
 
-<img src="poto/pramuka.jpeg" alt="Logo">
+<img src="poto/pramuka.jpeg">
 
 <span>RACANA POLSRI</span>
 
@@ -381,10 +442,11 @@ display:none;
 
 <ul>
 
-<li><a href="index.html">Beranda</a></li>
-<li><a href="sejarah pramuka.html">Sejarah</a></li>
-<li><a href="adat.html">Adat</a></li>
-<li><a href="galeri.html">Galeri</a></li>
+<li><a href="index.html">BERANDA</a></li>
+<li><a href="sejarah pramuka.html">SEJARAH RACANA</a></li>
+<li><a href="adat.html">ADAT RACANA</a></li>
+<li><a href="budge.html">BADGE RACANA</a></li>
+<li><a href="Untitled-1.html">STRUKTUR RACANA</a></li>
 
 </ul>
 
@@ -396,45 +458,37 @@ display:none;
 
 <div class="batik-right"></div>
 
-<img src="poto/graha.jpeg" class="hero-watermark" alt="Watermark">
+<img src="poto/graha.jpeg" class="hero-watermark">
 
 <div class="container">
 
 <div class="title">
 
-<img src="poto/pramuka.jpeg" alt="Logo Racana">
+<img src="poto/pramuka.jpeg">
 
 <h3>GERAKAN PRAMUKA</h3>
 
-<h1>SEJARAH RACANA</h1>
+<h1>SEJARAH RACANA PRAMUKA POLSRI</h1>
 
 </div>
 
 <div class="content">
 
-<h2>Sejarah Racana Politeknik Negeri Sriwijaya</h2>
-
 <p>
-Racana merupakan satuan Gerakan Pramuka di lingkungan perguruan tinggi yang menjadi wadah pembinaan mahasiswa dalam mengembangkan karakter, kepemimpinan, keterampilan, serta jiwa pengabdian kepada masyarakat berdasarkan Tri Satya dan Dasa Dharma Pramuka.
+Gerakan Pramuka merupakan wadah pendidikan karakter yang menanamkan nilai kepemimpinan, kemandirian, dan pengabdian kepada masyarakat.
 </p>
 
 <p>
-Racana Politeknik Negeri Sriwijaya didirikan sebagai organisasi kemahasiswaan yang bertujuan membentuk generasi muda yang disiplin, mandiri, bertanggung jawab, memiliki semangat persaudaraan, nasionalisme, serta kepedulian terhadap lingkungan dan masyarakat.
+Berangkat dari semangat tersebut, sekelompok mahasiswa Politeknik Negeri Sriwijaya menggagas terbentuknya komunitas kepramukaan sebagai ruang pembinaan dan pengembangan diri di lingkungan kampus.
 </p>
 
 <p>
-Sejak berdiri, Racana Polsri aktif menyelenggarakan berbagai kegiatan seperti latihan rutin, perkemahan, bakti sosial, pelatihan kepemimpinan, pelestarian lingkungan, kegiatan kemanusiaan, dan pengabdian kepada masyarakat sebagai wujud nyata pengamalan nilai-nilai kepramukaan.
+Pramuka Politeknik Negeri Sriwijaya berdiri pada 3 Juni 2017 dan secara administratif disahkan pada 16 September 2021 dengan nama resmi Racana Radja Segentar Alam (03.169) dan Putri Kembang Dadar (03.170).
 </p>
 
 <p>
-Dengan semangat persatuan, kekeluargaan, dan pengabdian, Racana Polsri terus berkomitmen mencetak generasi muda yang berintegritas, berjiwa kepemimpinan, kreatif, inovatif, serta siap memberikan kontribusi terbaik bagi kampus, masyarakat, bangsa, dan negara.
+Sejak saat itu Racana POLSRI berkembang menjadi wadah pembentukan karakter, kepemimpinan, dan pengabdian bagi mahasiswa.
 </p>
-
-<div class="button">
-
-<a href="index.html">Kembali ke Beranda</a>
-
-</div>
 
 </div>
 
